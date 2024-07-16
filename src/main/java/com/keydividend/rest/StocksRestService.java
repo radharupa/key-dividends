@@ -37,7 +37,7 @@ public interface StocksRestService {
 
 	public TickerSymbol getFinancials(TickerSymbol tickerSymbol);
 
-	public TickerSymbol geFullStockPrice(String tickerSymbol);
+	//public TickerSymbol geFullStockPrice(String tickerSymbol);
 
 	public List<TickerSymbol> getBatchStockPrice(List<String> tickerSymbols);
 	

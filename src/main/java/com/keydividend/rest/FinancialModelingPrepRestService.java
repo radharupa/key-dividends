@@ -187,7 +187,7 @@ public class FinancialModelingPrepRestService implements StocksRestService {
     }
 
 
-    public void getStockPrice(String tickerSymbol)
+    public TickerSymbol getStockPrice(String tickerSymbol)
     {
         try {
             JSONArray respJson = getResponse(stockPriceUrl+tickerSymbol+"?"+apiKey);
@@ -205,9 +205,11 @@ public class FinancialModelingPrepRestService implements StocksRestService {
             logger.error("Failed:::"+e.getMessage());
             e.printStackTrace();
         }
+        return null;
     }
 
-    public void getFullStockPrice(String tickerSymbol)
+
+    public TickerSymbol getFullStockPrice(String tickerSymbol)
     {
         try {
             JSONArray respJson = getResponse(fullStockPriceUrl+tickerSymbol+"?"+apiKey);
@@ -215,9 +217,10 @@ public class FinancialModelingPrepRestService implements StocksRestService {
             logger.error("Failed:::"+e.getMessage());
             e.printStackTrace();
         }
+        return null;
     }
 
-    public void getBatchStockPrice(List<String> tickerSymbols)
+    public List<TickerSymbol> getBatchStockPrice(List<String> tickerSymbols)
     {
         try {
             JSONArray respJson = getResponse(batchPriceUrl+tickerSymbols+"?"+apiKey);
@@ -225,6 +228,7 @@ public class FinancialModelingPrepRestService implements StocksRestService {
             logger.error("Failed:::"+e.getMessage());
             e.printStackTrace();
         }
+        return null;
     }
 
     public void getDividendPrice(String tickerSymbol)
